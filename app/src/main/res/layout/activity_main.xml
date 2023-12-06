@@ -58,7 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/errorText"
                             android:layout_weight="1"
-                            android:textColor="#F4DC06"
+                            android:textColor="#FF9800"
                             android:text="System"/>
                 </LinearLayout>
             </ScrollView>
@@ -71,7 +71,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/predictionText"
-                            android:layout_weight="1" android:textColor="#F40404"
+                            android:layout_weight="1" android:textColor="#FF3B3B"
                             android:scrollbars="horizontal"
                             android:text="Prediction"/>
                 </LinearLayout>
