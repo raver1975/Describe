@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Camera2-API-Example.iml" filepath="$PROJECT_DIR$/Android-Camera2-API-Example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android-Camera2-API-Example.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Documents.Android-Camera2-API-Example.iml" filepath="$PROJECT_DIR$/.idea/modules/Documents.Android-Camera2-API-Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
