@@ -394,7 +394,7 @@ public class MainActivity extends AppCompatActivity {
             StreamConfigurationMap map = characteristics.get(
                     CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
 
-            Size smallest = Collections.max(
+            Size smallest = Collections.min(
                     Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)),
                     new CompareSizesByArea());
             int width = smallest.getWidth();
