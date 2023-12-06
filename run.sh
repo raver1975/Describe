@@ -16,8 +16,7 @@ echo "prompted"
 prompt=$(cat $file2)
 echo $prompt
 (/data/data/com.termux/files/home/llama.cpp/build/bin/llava-cli -m /storage/emulated/0/Documents/ggml-model-q5_k.gguf --mmproj /storage/emulated/0/Documents/mmproj-model-f16.gguf  --image /storage/emulated/0/Documents/pic.jpg -p "$prompt" --temp 0.1 --verbose-prompt | sed '1,/^encode_image_with_clip/d') >/storage/emulated/0/Documents/llava.txt
-#(/data/data/com.termux/files/home/llama.cpp/build/bin/llava-cli -m /storage/emulated/0/Documents/ggml-model-q5_k.gguf --mmproj /storage/emulated/0/Documents/mmproj-model-f16.gguf  --image /storage/emulated/0/Documents/pic.jpg -p "$prompt" --temp 0.1 --verbose-prompt) >/storage/emulated/0/Documents/llava.txt
 prediction=$(cat $file5)
-echo "$predicted"
+echo "$prediction"
 mv "$file2" "$file3"
 done
