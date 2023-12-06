@@ -169,12 +169,7 @@ public class MainActivity extends AppCompatActivity {
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
-                            File ff=Environment.getExternalStoragePublicDirectory("Documents");
-                            File f=new File(ff.getPath()+File.separator+"pic.jpg");
-                            Bitmap bmp = BitmapFactory.decodeFile(f.getPath());
-                            Log.d("describe","f="+f+" "+f.exists()+" "+bmp);
-//        imageView.setImageBitmap(decodeSampledBitmapFromFile(f.getAbsolutePath(), 200, 200));
-                            imageView.setImageBitmap(bmp);
+                            loadImageView();
                         }
                     });
                     try {
@@ -249,6 +244,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Execute script
 
+    }
+
+    public void loadImageView(){
+        File ff=Environment.getExternalStoragePublicDirectory("Documents");
+        File f=new File(ff.getPath()+File.separator+"pic.jpg");
+        Bitmap bmp = BitmapFactory.decodeFile(f.getPath());
+        Log.d("describe","f="+f+" "+f.exists()+" "+bmp);
+//        imageView.setImageBitmap(decodeSampledBitmapFromFile(f.getAbsolutePath(), 200, 200));
+        imageView.setImageBitmap(bmp);
     }
     public static Bitmap decodeSampledBitmapFromFile(String path,
                                                      int reqWidth, int reqHeight) { // BEST QUALITY MATCH
@@ -428,6 +432,12 @@ public class MainActivity extends AppCompatActivity {
                             image.close();
                         }
                     }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadImageView();
+                        }
+                    });
                 }
 
                 private void save(byte[] bytes) throws IOException {
