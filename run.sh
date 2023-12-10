@@ -15,7 +15,12 @@ done
 echo "prompted"
 prompt=$(cat $file2)
 echo $prompt
+GGML_OPENCL_PLATFORM=0
+GGML_OPENCL_DEVICE=0
+export LD_LIBRARY_PATH=/vendor/lib:$LD_LIBRARY_PATH
+termux-wake-lock
 (/data/data/com.termux/files/home/llama.cpp/build/bin/llava-cli -m /storage/emulated/0/Documents/ggml-model-q5_k.gguf --mmproj /storage/emulated/0/Documents/mmproj-model-f16.gguf  --image /storage/emulated/0/Documents/pic.jpg -p "$prompt" --temp 0.1 --verbose-prompt | sed '1,/^encode_image_with_clip/d') >/storage/emulated/0/Documents/llava.txt
+termux-wake-unlock
 prediction=$(cat $file5)
 echo "$prediction"
 mv "$file2" "$file3"

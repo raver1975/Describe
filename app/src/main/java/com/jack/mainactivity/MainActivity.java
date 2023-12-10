@@ -152,22 +152,22 @@ public class MainActivity extends AppCompatActivity {
                             File sdcard = Environment.getExternalStoragePublicDirectory("Documents");
                             try {
                                 errorText.setText(getStringFromFile(sdcard.getPath() + "/llavaerror.txt"));
-                                errorScroll.post(new Runnable() {
-                                    public void run() {
-                                        errorScroll.fullScroll(View.FOCUS_DOWN);
-                                    }
-                                });
+//                                errorScroll.post(new Runnable() {
+//                                    public void run() {
+//                                        errorScroll.fullScroll(View.FOCUS_DOWN);
+//                                    }
+//                                });
 
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
                             try {
                                 predictionText.setText(getStringFromFile(sdcard.getPath() + "/llava.txt"));
-                                predictionScroll.post(new Runnable() {
-                                    public void run() {
-                                        predictionScroll.fullScroll(View.FOCUS_DOWN);
-                                    }
-                                });
+//                                predictionScroll.post(new Runnable() {
+//                                    public void run() {
+//                                        predictionScroll.fullScroll(View.FOCUS_DOWN);
+//                                    }
+//                                });
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -248,14 +248,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void loadImageView(){
-        File ff=Environment.getExternalStoragePublicDirectory("Documents");
-        File f=new File(ff.getPath()+File.separator+"pic.jpg");
+    public void loadImageView() {
+        File ff = Environment.getExternalStoragePublicDirectory("Documents");
+        File f = new File(ff.getPath() + File.separator + "pic.jpg");
         Bitmap bmp = BitmapFactory.decodeFile(f.getPath());
-        Log.d("describe","f="+f+" "+f.exists()+" "+bmp);
+        Log.d("describe", "f=" + f + " " + f.exists() + " " + bmp);
 //        imageView.setImageBitmap(decodeSampledBitmapFromFile(f.getAbsolutePath(), 200, 200));
         imageView.setImageBitmap(bmp);
     }
+
     public static Bitmap decodeSampledBitmapFromFile(String path,
                                                      int reqWidth, int reqHeight) { // BEST QUALITY MATCH
 
@@ -272,14 +273,14 @@ public class MainActivity extends AppCompatActivity {
         int inSampleSize = 1;
 
         if (height > reqHeight) {
-            inSampleSize = Math.round((float)height / (float)reqHeight);
+            inSampleSize = Math.round((float) height / (float) reqHeight);
         }
 
         int expectedWidth = width / inSampleSize;
 
         if (expectedWidth > reqWidth) {
             //if(Math.round((float)width / (float)reqWidth) > inSampleSize) // If bigger SampSize..
-            inSampleSize = Math.round((float)width / (float)reqWidth);
+            inSampleSize = Math.round((float) width / (float) reqWidth);
         }
 
 
@@ -290,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
 
         return BitmapFactory.decodeFile(path, options);
     }
+
     private void takePrompt() {
         final File file = new File(Environment.getExternalStorageDirectory() + "/Documents/prompt.txt");
         Log.d("describe", "saving prompt at " + file.getPath());
