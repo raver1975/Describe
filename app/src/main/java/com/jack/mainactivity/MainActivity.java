@@ -151,23 +151,29 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             File sdcard = Environment.getExternalStoragePublicDirectory("Documents");
                             try {
+                                String oldText = errorText.getText().toString();
                                 errorText.setText(getStringFromFile(sdcard.getPath() + "/llavaerror.txt"));
-//                                errorScroll.post(new Runnable() {
-//                                    public void run() {
-//                                        errorScroll.fullScroll(View.FOCUS_DOWN);
-//                                    }
-//                                });
+                                if (!oldText.equals(errorText.getText().toString())) {
+                                    errorScroll.post(new Runnable() {
+                                        public void run() {
+                                            errorScroll.fullScroll(View.FOCUS_DOWN);
+                                        }
+                                    });
+                                }
 
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
                             try {
+                                String oldText = predictionText.getText().toString();
                                 predictionText.setText(getStringFromFile(sdcard.getPath() + "/llava.txt"));
-//                                predictionScroll.post(new Runnable() {
-//                                    public void run() {
-//                                        predictionScroll.fullScroll(View.FOCUS_DOWN);
-//                                    }
-//                                });
+                                if (!oldText.equals(predictionText.getText().toString())) {
+                                    predictionScroll.post(new Runnable() {
+                                        public void run() {
+                                            predictionScroll.fullScroll(View.FOCUS_DOWN);
+                                        }
+                                    });
+                                }
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
