@@ -152,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
                             File sdcard = Environment.getExternalStoragePublicDirectory("Documents");
                             try {
                                 String oldText = errorText.getText().toString();
-                                errorText.setText(getStringFromFile(sdcard.getPath() + "/llavaerror.txt"));
-                                if (!oldText.equals(errorText.getText().toString())) {
+                                String newText = getStringFromFile(sdcard.getPath() + "/llavaerror.txt");
+                                if (!oldText.equals(newText)) {
+                                    errorText.setText(newText);
                                     errorScroll.post(new Runnable() {
                                         public void run() {
                                             errorScroll.fullScroll(View.FOCUS_DOWN);
@@ -166,8 +167,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                             try {
                                 String oldText = predictionText.getText().toString();
-                                predictionText.setText(getStringFromFile(sdcard.getPath() + "/llava.txt"));
-                                if (!oldText.equals(predictionText.getText().toString())) {
+                                String newText = getStringFromFile(sdcard.getPath() + "/llava.txt");
+                                if (!oldText.equals(newText)) {
+                                    predictionText.setText(newText);
                                     predictionScroll.post(new Runnable() {
                                         public void run() {
                                             predictionScroll.fullScroll(View.FOCUS_DOWN);
